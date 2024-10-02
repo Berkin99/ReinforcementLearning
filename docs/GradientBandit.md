@@ -9,9 +9,8 @@ The **Gradient Bandit Algorithm** is a reinforcement learning technique specific
 
 2. **Softmax Action Selection**:
    - The algorithm uses the softmax function to convert the preference values into probabilities for selecting each action:
-     \[
-     P(a_i) = \frac{e^{H(a_i)}}{\sum_{j=1}^{n} e^{H(a_j)}}
-     \]
+     ![formul](https://latex.codecogs.com/png.latex?P(a_i)%20=%20\frac{e^{H(a_i)}}{\sum_{j=1}^{n}%20e^{H(a_j)}})
+
    - This means actions with higher preferences have a higher probability of being selected, but all actions still have a non-zero probability of being chosen.
 
 3. **Updating Preferences**:
