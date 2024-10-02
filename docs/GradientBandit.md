@@ -1,3 +1,4 @@
+
 # Gradient Bandit Algorithm
 The **Gradient Bandit Algorithm** is a reinforcement learning technique specifically designed for solving the multi-armed bandit problem. Unlike traditional methods that estimate action values (like Epsilon-Greedy or Upper Confidence Bound), the Gradient Bandit algorithm focuses on maintaining preferences for each action and updating those preferences based on received rewards. This approach encourages exploration of less-selected actions while exploiting the actions that have performed well.
 
@@ -9,7 +10,7 @@ The **Gradient Bandit Algorithm** is a reinforcement learning technique specific
 
 2. **Softmax Action Selection**:
    - The algorithm uses the softmax function to convert the preference values into probabilities for selecting each action:
-     ![formul](https://latex.codecogs.com/png.latex?P(a_i)%20=%20\frac{e^{H(a_i)}}{\sum_{j=1}^{n}%20e^{H(a_j)}})
+     ![formul](https://latex.codecogs.com/png.latex?\color{white}%20P(a_i)%20=%20\frac{e^{H(a_i)}}{\sum_{j=1}^{n}%20e^{H(a_j)}})
 
    - This means actions with higher preferences have a higher probability of being selected, but all actions still have a non-zero probability of being chosen.
 
@@ -17,13 +18,9 @@ The **Gradient Bandit Algorithm** is a reinforcement learning technique specific
    - After selecting an action and receiving a reward, the preferences are updated based on the difference between the received reward and a baseline (usually the average reward).
    - The update rules are as follows:
      - For the chosen action:
-       \[
-       H(a_i) \leftarrow H(a_i) + \alpha \cdot (R_t - \bar{R}) \cdot (1 - P(a_i))
-       \]
+       ![formul](https://latex.codecogs.com/png.latex?\color{white}%20H(a_i)%20\leftarrow%20H(a_i)%20+%20\alpha%20\cdot%20(R_t%20-%20\bar{R})%20\cdot%20(1%20-%20P(a_i)))
      - For all other actions:
-       \[
-       H(a_j) \leftarrow H(a_j) - \alpha \cdot (R_t - \bar{R}) \cdot P(a_j)
-       \]
+       ![formul](https://latex.codecogs.com/png.latex?\color{white}%20H(a_j)%20\leftarrow%20H(a_j)%20-%20\alpha%20\cdot%20(R_t%20-%20\bar{R})%20\cdot%20P(a_j))
      Here, \( \alpha \) is the learning rate, \( R_t \) is the received reward, and \( \bar{R} \) is the average reward (baseline).
 
 4. **Exploration vs. Exploitation**:
