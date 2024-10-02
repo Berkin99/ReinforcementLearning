@@ -6,7 +6,7 @@ def thompson(positive, negative):
     sampled_values = [beta.rvs(a=1 + positive[i], b=1 + negative[i]) for i in range(size)] # Sample from the Beta distribution for each element
     return np.argmax(sampled_values)    # Choose the element with the highest sampled value
 
-def epsilonGreedy(epsilon: float, n:int, calculated):
+def epsilonGreedy(epsilon:float, n:int, calculated) -> int:
     if np.random.rand() < epsilon: 
         return np.random.randint(0, n)  # Explore: Random element.
     else: 
