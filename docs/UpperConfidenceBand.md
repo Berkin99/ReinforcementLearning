@@ -12,11 +12,10 @@ Upper Confidence Bound (UCB) is an algorithm used in the multi-armed bandit prob
    
    The formula typically used for UCB is:
    
-   \[
-   UCB = \hat{\mu}_i + \sqrt{\frac{2 \ln t}{n_i}}
-   \]
+   ![formul](https://latex.codecogs.com/png.latex?\color{white}%20UCB%20=%20\hat{\mu}_i%20+%20\sqrt{\frac{2%20\ln%20t}{n_i}})
+
    Where:
-   - \(\hat{\mu}_i\) is the average reward of arm \(i\),
+   - ![formul](https://latex.codecogs.com/png.latex?\color{white}%20\hat{\mu}_i) is the average reward of arm \(i\),
    - \(t\) is the current time step or round number,
    - \(n_i\) is the number of times arm \(i\) has been played.
 
